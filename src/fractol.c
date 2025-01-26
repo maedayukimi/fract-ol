@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:07:11 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:36:31 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	get_set(t_fractol *f, char **av)
 		f->set = JULIA;
 	else
 		help_msg(f);
-	printf("f->set: %d\n", f->set);  // デバッグ出力
+	printf("f->set: %d\n", f->set);
 }
 
 static void	get_julia_starting_values(t_fractol *f, int ac, char **av)

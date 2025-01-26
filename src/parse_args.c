@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:01:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 15:32:09 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:38:00 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ double	ft_atof(char *str)
 		i++;
 	}
 	if (str[i] && !ft_isdigit(str[i]))
-		return (-42);// why -42? just kidding?
+		return (1);
 	return (nb * is_neg);
 }

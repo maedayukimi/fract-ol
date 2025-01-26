@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:21:37 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 17:23:59 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:36:56 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	zoom(t_fractol *f, double zoom)
 
 	center_r = f->min_r - f->max_r;
 	center_i = f->max_i - f->min_i;
-	f->max_r = f->max_r + (center_r - zoom *center_r) / 2;
+	f->max_r = f->max_r + (center_r - zoom * center_r) / 2;
 	f->min_r = f->max_r + zoom * center_r;
 	f->min_i = f->min_i + (center_i - zoom * center_i) / 2;
-	f->max_i = f->min_i + zoom *center_i;
+	f->max_i = f->min_i + zoom * center_i;
 }
 
 static void	move(t_fractol *f, double distance, char direction)

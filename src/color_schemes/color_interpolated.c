@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:45:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 15:42:13 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:40:26 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void	set_color_multiple(t_fractol *f, int colors[4], int n)
 		while ((i + j) < MAX_ITERATIONS && j < (MAX_ITERATIONS / (n - 1)))
 		{
 			fraction = (double)j / (MAX_ITERATIONS / (n - 1));
-			f->palette[i + j] = interpolated(colors[x], colors[x + 1], fraction);
+			f->palette[i + j] = interpolated
+				(colors[x], colors[x + 1], fraction);
 			j++;
 		}
 		x++;

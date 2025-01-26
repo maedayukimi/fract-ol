@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 18:20:55 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:37:29 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {
-		f->buf[x * 4 + y * WIDTH * 4] = color;
-		f->buf[x * 4 + y * WIDTH * 4 + 1] = color >> 8;
-		f->buf[x * 4 + y * WIDTH * 4 + 2] = color >> 16;
-		f->buf[x * 4 + y * WIDTH * 4 + 3] = color >> 24;
+	f->buf[x * 4 + y * WIDTH * 4] = color;
+	f->buf[x * 4 + y * WIDTH * 4 + 1] = color >> 8;
+	f->buf[x * 4 + y * WIDTH * 4 + 2] = color >> 16;
+	f->buf[x * 4 + y * WIDTH * 4 + 3] = color >> 24;
 }
 
 static int	calculate_fractal(t_fractol *f, double pr, double pi)

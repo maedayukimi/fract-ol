@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:57:06 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/24 20:06:25 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:39:40 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	set_color_opposites(t_fractol *f, int color)
 		b += i % 0xFF;
 		f->palette[i] = 0xFF << 24 | r << 16 | g << 8 | b;
 	}
-		f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITERATIONS - 1] = 0;
 }
 
 void	set_color_contrasted(t_fractol *f, int color)
@@ -56,7 +56,7 @@ void	set_color_contrasted(t_fractol *f, int color)
 			b += i % 0xFF;
 		f->palette[i] = 0xFF << 24 | r << 16 | g << 8 | b;
 	}
-		f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITERATIONS - 1] = 0;
 }
 
 void	set_color_graphic(t_fractol *f, int color)
@@ -78,5 +78,5 @@ void	set_color_graphic(t_fractol *f, int color)
 			rgb[2]++;
 		f->palette[i] = 0xFF << 24 | rgb[0] << 16 | rgb[1] << 8 | rgb[2];
 	}
-		f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITERATIONS - 1] = 0;
 }

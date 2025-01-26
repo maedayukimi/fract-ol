@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:10:57 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/24 19:14:43 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:40:56 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	julia(t_fractol *f, double zr, double zi)
 	{
 		if ((zi * zi + zr * zr) > 4.0)
 			break ;
-		tmp = 2 * zr *zi + f->ki;
+		tmp = 2 * zr * zi + f->ki;
 		zr = zr * zr - zi * zi + f->kr;
 		zi = tmp;
 		n++;
