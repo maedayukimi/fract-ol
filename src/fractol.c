@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 17:53:53 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 16:07:11 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ int	main(int ac, char **av)
 {
 	t_fractol	f;
 
+	clean_init(&f);
 	if (ac < 2)
 		help_msg(&f);
-	clean_init(&f);
 	handle_args(&f, ac, av);
 	init(&f);
 	render(&f);
