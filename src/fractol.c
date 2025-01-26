@@ -6,34 +6,20 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:36:31 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 17:12:09 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	type_cmp(char *av, char *str, char c, char n)
-{
-	int	i;
-
-	i = 0;
-	while (av[i])
-	{
-		av[i] = ft_tolower(av[i]);
-		i++;
-	}
-	if (!ft_strncmp(av, str, ft_strlen(str) + 1))
-		return (1);
-	else if (av[1] == '\0' && (av[0] == c || av[0] == n))
-		return (1);
-	return (0);
-}
-
 static void	get_set(t_fractol *f, char **av)
 {
-	if (type_cmp(av[1], "mandelbrot", 'm', '1'))
+	char	initial;
+
+	initial = ft_tolower(av[1][0]);
+	if (initial == 'm')
 		f->set = MANDELBROT;
-	else if (type_cmp(av[1], "julia", 'j', '2'))
+	else if (initial == 'j')
 		f->set = JULIA;
 	else
 		help_msg(f);

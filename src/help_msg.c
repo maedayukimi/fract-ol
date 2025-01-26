@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 15:23:53 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 15:36:50 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 17:13:39 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	print_fractal_options(void)
 {
-	ft_putendl_fd("\tM - Mandelbrot", 1);
-	ft_putendl_fd("\tJ - Julia", 1);
+	ft_putendl_fd("\tMandelbrot or Julia", 1);
 }
 
 void	print_color_options(void)
