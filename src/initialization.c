@@ -6,13 +6,13 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:31:34 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	clean_init(t_fractol *f)
+void	init(t_fractol *f)
 {
 	f->mlx = NULL;
 	f->win = NULL;
@@ -79,7 +79,7 @@ void	reinit_img(t_fractol *f)
 	init_img(f);
 }
 
-void	init(t_fractol *f)
+void	mlx_initialize(t_fractol *f)
 {
 	f->mlx = mlx_init();
 	if (!f->mlx)

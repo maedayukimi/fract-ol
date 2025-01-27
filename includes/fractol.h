@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int		get_percent_color(int color, double percent);
 int		key_event(int keycode, t_fractol *mlx);
 int		mouse_event(int keycode, int x, int y, t_fractol *mlx);
 
-void	clean_init(t_fractol *f);
-void	reinit_img(t_fractol *f);
 void	init(t_fractol *f);
+void	reinit_img(t_fractol *f);
+void	mlx_initialize(t_fractol *f);
 void	get_complex_layout(t_fractol *f);
 void	get_color(t_fractol *f, int ac, char **av);
 double	ft_atof(char *str);

@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:27:43 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ int	main(int ac, char **av)
 {
 	t_fractol	f;
 
-	clean_init(&f);
+	init(&f);
 	if (ac < 2)
 		help_msg(&f);
 	handle_args(&f, ac, av);
-	init(&f);
+	mlx_initialize(&f);
 	render(&f);
 	mlx_hook(f.win, EVENT_CLOSE_BTN, 0, end_fractol, &f);
 	mlx_key_hook(f.win, key_event, &f);

@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:21:37 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:36:56 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:07:43 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,43 @@
 
 static void	zoom(t_fractol *f, double zoom)
 {
-	double	center_r;
-	double	center_i;
+	double	width_r;
+	double	height_i;
 
-	center_r = f->min_r - f->max_r;
-	center_i = f->max_i - f->min_i;
-	f->max_r = f->max_r + (center_r - zoom * center_r) / 2;
-	f->min_r = f->max_r + zoom * center_r;
-	f->min_i = f->min_i + (center_i - zoom * center_i) / 2;
-	f->max_i = f->min_i + zoom * center_i;
+	width_r = f->min_r - f->max_r;
+	height_i = f->max_i - f->min_i;
+	f->max_r = f->max_r + (width_r - zoom * width_r) / 2;
+	f->min_r = f->max_r + zoom * width_r;
+	f->min_i = f->min_i + (height_i - zoom * height_i) / 2;
+	f->max_i = f->min_i + zoom * height_i;
 }
 
 static void	move(t_fractol *f, double distance, char direction)
 {
-	double	center_r;
-	double	center_i;
+	double	width_r;
+	double	height_i;
 
-	center_r = f->max_r - f->min_r;
-	center_i = f->max_i - f->min_i;
+	width_r = f->max_r - f->min_r;
+	height_i = f->max_i - f->min_i;
 	if (direction == 'R')
 	{
-		f->min_r += center_r * distance;
-		f->max_r += center_r * distance;
+		f->min_r += width_r * distance;
+		f->max_r += width_r * distance;
 	}
 	else if (direction == 'L')
 	{
-		f->min_r -= center_r * distance;
-		f->max_r -= center_r * distance;
+		f->min_r -= width_r * distance;
+		f->max_r -= width_r * distance;
 	}
 	else if (direction == 'D')
 	{
-		f->min_i -= center_i * distance;
-		f->max_i -= center_i * distance;
+		f->min_i -= height_i * distance;
+		f->max_i -= height_i * distance;
 	}
 	else if (direction == 'U')
 	{
-		f->min_i += center_i * distance;
-		f->max_i += center_i * distance;
+		f->min_i += height_i * distance;
+		f->max_i += height_i * distance;
 	}
 }
 
