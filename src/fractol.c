@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 17:12:09 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 16:35:36 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	get_set(t_fractol *f, char **av)
 
 static void	get_julia_starting_values(t_fractol *f, int ac, char **av)
 {
-	if (f->set != JULIA || ac == 2)
+	if (f->set == MANDELBROT || ac == 2)
 	{
 		f->kr = -0.766667;
 		f->ki = -0.090000;
@@ -69,7 +69,6 @@ int	main(int ac, char **av)
 	handle_args(&f, ac, av);
 	init(&f);
 	render(&f);
-	print_controls();
 	mlx_hook(f.win, EVENT_CLOSE_BTN, 0, end_fractol, &f);
 	mlx_key_hook(f.win, key_event, &f);
 	mlx_mouse_hook(f.win, mouse_event, &f);

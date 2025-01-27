@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 17:59:07 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 16:00:22 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIDTH 900
 # define HEIGHT 900
-# define MAX_ITERATIONS 80
+# define MAX_ITERATIONS 60
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -78,6 +78,5 @@ int		end_fractol(t_fractol *mlx);
 void	clean_exit(int error_code, t_fractol *f);
 int		msg(char *str1, char *str2, int errno);
 void	help_msg(t_fractol *f);
-void	print_controls(void);
 
 #endif

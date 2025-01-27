@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:45:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:40:26 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 17:45:52 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	interpolated(int startcolor, int endcolor, double fraction)
 	end_rgb[1] = ((endcolor >> 8) & 0xFF);
 	end_rgb[2] = ((endcolor >> 0) & 0xFF);
 	start_rgb[0] = (end_rgb[0] - start_rgb[0]) * fraction * start_rgb[0];
-	start_rgb[1] = (end_rgb[1] - start_rgb[1]) * fraction * start_rgb[0];
-	start_rgb[2] = (end_rgb[2] - start_rgb[2]) * fraction * start_rgb[0];
+	start_rgb[1] = (end_rgb[1] - start_rgb[1]) * fraction * start_rgb[1];
+	start_rgb[2] = (end_rgb[2] - start_rgb[2]) * fraction * start_rgb[2];
 	return (0xFF << 24 | start_rgb[0] << 16 | start_rgb[1] << 8 | start_rgb[2]);
 }
 

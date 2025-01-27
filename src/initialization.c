@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:31:34 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 18:28:36 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 17:27:59 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ static void	init_img(t_fractol *f)
 
 	f->palette = ft_calloc((MAX_ITERATIONS + 1), sizeof(int));
 	if (!(f->palette))
-		clean_exit(msg("error initializing color scheme.", "", 1), f);
+		clean_exit(msg("Error initializing color scheme.", "", 1), f);
 	f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);
 	if (!(f->img))
-		clean_exit(msg("image creation error.", "", 1), f);
+		clean_exit(msg("Image creation error.", "", 1), f);
 	buf = mlx_get_data_addr(f->img, &pixel_bits, &line_bytes, &endian);
 	f->buf = buf;
 }
@@ -83,10 +83,10 @@ void	init(t_fractol *f)
 {
 	f->mlx = mlx_init();
 	if (!f->mlx)
-		clean_exit(msg("MLX: error connecting to mlx.", "", 1), f);
+		clean_exit(msg("Error connecting to mlx.", "", 1), f);
 	f->win = mlx_new_window(f->mlx, WIDTH, HEIGHT, "Fractol");
 	if (!f->win)
-		clean_exit(msg("MLX: error creating window.", "", 1), f);
+		clean_exit(msg("Error creating window.", "", 1), f);
 	f->sx = 2.0;
 	f->rx = 0.5;
 	f->fx = 1.0;

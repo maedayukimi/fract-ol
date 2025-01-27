@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:01:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:38:00 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/26 17:40:16 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ double	ft_atof(char *str)
 	}
 	if (str[i] == '.')
 		i++;
-	while (str[i] && ft_isdigit(str[1]))
+	while (str[i] && ft_isdigit(str[i]))
 	{
 		nb = nb + ((str[i] - '0') * div);
 		div *= 0.1;
