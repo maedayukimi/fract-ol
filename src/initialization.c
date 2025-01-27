@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:31:34 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 17:27:59 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	init_img(t_fractol *f)
 	int		endian;
 	char	*buf;
 
-	f->palette = ft_calloc((MAX_ITERATIONS + 1), sizeof(int));
+	f->palette = ft_calloc((MAX_ITER + 1), sizeof(int));
 	if (!(f->palette))
 		clean_exit(msg("Error initializing color scheme.", "", 1), f);
 	f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);

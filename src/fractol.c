@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 16:35:36 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:27:43 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	get_set(t_fractol *f, char **av)
 	printf("f->set: %d\n", f->set);
 }
 
-static void	get_julia_starting_values(t_fractol *f, int ac, char **av)
+static void	set_fractal_size(t_fractol *f, int ac, char **av)
 {
 	if (f->set == MANDELBROT || ac == 2)
 	{
@@ -55,7 +55,7 @@ static void	handle_args(t_fractol *f, int ac, char **av)
 		help_msg(f);
 	else if (f->set == JULIA && ac > 5)
 		help_msg(f);
-	get_julia_starting_values(f, ac, av);
+	set_fractal_size(f, ac, av);
 	get_color(f, ac, av);
 }
 

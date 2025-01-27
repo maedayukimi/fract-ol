@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 16:00:22 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIDTH 900
 # define HEIGHT 900
-# define MAX_ITERATIONS 60
+# define MAX_ITER 60
 
 # define MANDELBROT 1
 # define JULIA 2

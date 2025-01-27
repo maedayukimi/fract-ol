@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 15:57:00 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 15:57:32 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	fill_color_stripe(t_fractol *f, int color, int stripe)
 	int	i;
 
 	i = 0;
-	while (i < MAX_ITERATIONS)
+	while (i < MAX_ITER)
 	{
 		f->palette[i] = color;
 		i += stripe;
@@ -47,7 +47,7 @@ void	set_color_zebra(t_fractol *f, int color)
 	color2 = get_percent_color(color, 50);
 	fill_color_stripe(f, color, 1);
 	fill_color_stripe(f, color2, 2);
-	f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITER - 1] = 0;
 }
 
 void	set_color_triad(t_fractol *f, int color)
@@ -59,7 +59,7 @@ void	set_color_triad(t_fractol *f, int color)
 	fill_color_stripe(f, color, 1);
 	fill_color_stripe(f, triad[0], 2);
 	fill_color_stripe(f, triad[1], 3);
-	f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITER - 1] = 0;
 }
 
 void	set_color_tetra(t_fractol *f, int color)
@@ -73,5 +73,5 @@ void	set_color_tetra(t_fractol *f, int color)
 	fill_color_stripe(f, tetra[0], 2);
 	fill_color_stripe(f, tetra[1], 3);
 	fill_color_stripe(f, tetra[2], 4);
-	f->palette[MAX_ITERATIONS - 1] = 0;
+	f->palette[MAX_ITER - 1] = 0;
 }
