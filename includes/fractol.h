@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 17:41:03 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ void	render(t_fractol *f);
 int		julia_shift(int x, int y, t_fractol *f);
 
 void	color_shift(t_fractol *f);
-void	set_color_mono(t_fractol *f, int color);
-void	set_color_multiple(t_fractol *f, int colors[4], int n);
-void	set_color_zebra(t_fractol *f, int color);
-void	set_color_triad(t_fractol *f, int color);
-void	set_color_tetra(t_fractol *f, int color);
-void	set_color_opposites(t_fractol *f, int color);
-void	set_color_contrasted(t_fractol *f, int color);
-void	set_color_graphic(t_fractol *f, int color);
+void	pattern_1(t_fractol *f, int color);
+void	pattern_2(t_fractol *f, int colors[4], int n);
+void	pattern_3(t_fractol *f, int color);
+void	pattern_4(t_fractol *f, int color);
+void	pattern_5(t_fractol *f, int color);
+void	pattern_6(t_fractol *f, int color);
+void	pattern_7(t_fractol *f, int color);
+void	pattern_8(t_fractol *f, int color);
 int		get_percent_color(int color, double percent);
 
 int		key_event(int keycode, t_fractol *mlx);
@@ -70,7 +70,6 @@ int		mouse_event(int keycode, int x, int y, t_fractol *mlx);
 void	init(t_fractol *f);
 void	reinit_img(t_fractol *f);
 void	mlx_initialize(t_fractol *f);
-void	get_complex_layout(t_fractol *f);
 void	get_color(t_fractol *f, int ac, char **av);
 double	ft_atof(char *str);
 

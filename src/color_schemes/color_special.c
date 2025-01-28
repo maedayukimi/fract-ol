@@ -6,13 +6,13 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:57:06 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 17:39:59 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	set_color_opposites(t_fractol *f, int color)
+void	pattern_6(t_fractol *f, int color)
 {
 	int	i;
 	int	r;
@@ -34,7 +34,7 @@ void	set_color_opposites(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	set_color_contrasted(t_fractol *f, int color)
+void	pattern_7(t_fractol *f, int color)
 {
 	int	i;
 	int	r;
@@ -59,7 +59,7 @@ void	set_color_contrasted(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	set_color_graphic(t_fractol *f, int color)
+void	pattern_8(t_fractol *f, int color)
 {
 	int	i;
 	int	rgb[3];

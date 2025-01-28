@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 16:37:29 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 19:50:08 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 static void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {
-	f->buf[x * 4 + y * WIDTH * 4] = color;
-	f->buf[x * 4 + y * WIDTH * 4 + 1] = color >> 8;
-	f->buf[x * 4 + y * WIDTH * 4 + 2] = color >> 16;
-	f->buf[x * 4 + y * WIDTH * 4 + 3] = color >> 24;
+	int	position;
+
+	position = x * 4 + y * WIDTH * 4;
+	f->buf[position] = color;
+	f->buf[position + 1] = color >> 8;
+	f->buf[position + 2] = color >> 16;
+	f->buf[position + 3] = color >> 24;
 }
 
 static int	calculate_fractal(t_fractol *f, double pr, double pi)
@@ -40,17 +43,19 @@ void	render(t_fractol *f)
 	int		nb_iter;
 
 	mlx_clear_window(f->mlx, f->win);
-	y = -1;
-	while (++y < HEIGHT)
+	y = 0;
+	while (y < HEIGHT)
 	{
-		x = -1;
-		while (++x < WIDTH)
+		x = 0;
+		while (x < WIDTH)
 		{
 			pr = f->min_r + (double)x * (f->max_r - f->min_r) / WIDTH;
 			pi = f->max_i + (double)y * (f->min_i - f->max_i) / HEIGHT;
 			nb_iter = calculate_fractal(f, pr, pi);
 			set_pixel_color(f, x, y, f->palette[nb_iter]);
+			x++;
 		}
+		y++;
 	}
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 }

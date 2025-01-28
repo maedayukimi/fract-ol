@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:21:37 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 20:07:43 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 17:44:04 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 static void	zoom(t_fractol *f, double zoom)
 {
-	double	width_r;
-	double	height_i;
+	double	center_r;
+	double	center_i;
+	double	new_width;
+	double	new_height;
 
-	width_r = f->min_r - f->max_r;
-	height_i = f->max_i - f->min_i;
-	f->max_r = f->max_r + (width_r - zoom * width_r) / 2;
-	f->min_r = f->max_r + zoom * width_r;
-	f->min_i = f->min_i + (height_i - zoom * height_i) / 2;
-	f->max_i = f->min_i + zoom * height_i;
+	center_r = (f->min_r + f->max_r) / 2;
+	center_i = (f->min_i + f->max_i) / 2;
+	new_width = (f->max_r - f->min_r) * zoom / 2;
+	new_height = (f->max_i - f->min_i) * zoom / 2;
+	f->min_r = center_r - new_width;
+	f->max_r = center_r + new_width;
+	f->min_i = center_i - new_height;
+	f->max_i = center_i + new_height;
 }
 
 static void	move(t_fractol *f, double distance, char direction)
@@ -62,7 +66,6 @@ static int	key_event_extend(int keycode, t_fractol *mlx)
 		mlx->set = JULIA;
 	else
 		return (1);
-	get_complex_layout(mlx);
 	render(mlx);
 	return (0);
 }

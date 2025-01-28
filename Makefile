@@ -1,22 +1,20 @@
 NAME	= fractol
 
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
 
-MLX_PATH	= minilibx-linux/
 MLX_NAME	= libmlx.a
+MLX_PATH	= minilibx-linux/
 MLX			= $(MLX_PATH)$(MLX_NAME)
 
-LIBFT_PATH	= libft/
 LIBFT_NAME	= libft.a
+LIBFT_PATH	= libft/
 LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
 
-# Includes
 INC			=	-I ./includes/\
 				-I ./libft/\
 				-I ./minilibx-linux/
 
-# Sources
 SRC_PATH	=	src/
 SRC			=	fractol.c \
 				initialization.c \

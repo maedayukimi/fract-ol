@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:45:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 17:38:44 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	interpolated(int startcolor, int endcolor, double fraction)
 	return (0xFF << 24 | start_rgb[0] << 16 | start_rgb[1] << 8 | start_rgb[2]);
 }
 
-void	set_color_mono(t_fractol *f, int color)
+void	pattern_1(t_fractol *f, int color)
 {
 	int		i;
 	int		j;
@@ -56,7 +56,7 @@ void	set_color_mono(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	set_color_multiple(t_fractol *f, int colors[4], int n)
+void	pattern_2(t_fractol *f, int colors[4], int n)
 {
 	int		i;
 	int		j;

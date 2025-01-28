@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 15:57:00 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 17:39:15 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	get_percent_color(int color, double percent)
 	return (0xFF << 24 | trgb[0] << 16 | trgb[1] << 8 | trgb[2]);
 }
 
-void	set_color_zebra(t_fractol *f, int color)
+void	pattern_3(t_fractol *f, int color)
 {
 	int	color2;
 
@@ -50,7 +50,7 @@ void	set_color_zebra(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	set_color_triad(t_fractol *f, int color)
+void	pattern_4(t_fractol *f, int color)
 {
 	int		triad[2];
 
@@ -62,7 +62,7 @@ void	set_color_triad(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	set_color_tetra(t_fractol *f, int color)
+void	pattern_5(t_fractol *f, int color)
 {
 	int	tetra[3];
 
