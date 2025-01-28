@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:57:06 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 17:39:59 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 20:05:32 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	pattern_6(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	pattern_7(t_fractol *f, int color)
+void	pattern_5(t_fractol *f, int color)
 {
 	int	i;
 	int	r;
@@ -59,7 +59,7 @@ void	pattern_7(t_fractol *f, int color)
 	f->palette[MAX_ITER - 1] = 0;
 }
 
-void	pattern_8(t_fractol *f, int color)
+void	pattern_7(t_fractol *f, int color)
 {
 	int	i;
 	int	rgb[3];
