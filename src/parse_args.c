@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:01:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/26 17:40:16 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 20:24:06 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	get_color(t_fractol *f, int ac, char **av)
 		f->color = 0x9966FF;
 }
 
-static int	skip_space_sign(char *str, int *is_neg)
+static int	skip_space_sign(char *str, int *sign)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ static int	skip_space_sign(char *str, int *is_neg)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			*is_neg *= -1;
+			*sign *= -1;
 		i++;
 	}
 	return (i);
@@ -82,28 +82,28 @@ static int	skip_space_sign(char *str, int *is_neg)
 double	ft_atof(char *str)
 {
 	int		i;
-	double	nb;
-	int		is_neg;
+	double	n;
+	int		sign;
 	double	div;
 
-	nb = 0;
+	n = 0;
 	div = 0.1;
-	is_neg = 1;
-	i = skip_space_sign(str, &is_neg);
+	sign = 1;
+	i = skip_space_sign(str, &sign);
 	while (str[i] && ft_isdigit(str[i]) && str[i] != '.')
 	{
-		nb = (nb * 10.0) + (str[i] - '0');
+		n = (n * 10.0) + (str[i] - '0');
 		i++;
 	}
 	if (str[i] == '.')
 		i++;
 	while (str[i] && ft_isdigit(str[i]))
 	{
-		nb = nb + ((str[i] - '0') * div);
+		n = n + ((str[i] - '0') * div);
 		div *= 0.1;
 		i++;
 	}
 	if (str[i] && !ft_isdigit(str[i]))
 		return (1);
-	return (nb * is_neg);
+	return (n * sign);
 }

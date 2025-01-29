@@ -24,11 +24,11 @@ SRC			=	fractol.c \
 				color.c \
 				parse_args.c \
 				help_msg.c \
-				fractals/mandelbrot.c \
-				fractals/julia.c \
-				color_schemes/color_interpolated.c \
-				color_schemes/color_special.c \
-				color_schemes/color_striped.c
+				fractal_sets/mandelbrot.c \
+				fractal_sets/julia.c \
+				color_sets/color_interpolated.c \
+				color_sets/color_special.c \
+				color_sets/color_striped.c
 SRCS		=$(addprefix $(SRC_PATH), $(SRC))
 
 OBJ_PATH	= obj/
@@ -44,8 +44,8 @@ $(OBJS): $(OBJ_PATH)
 
 $(OBJ_PATH):
 	@mkdir $(OBJ_PATH)
-	@mkdir $(OBJ_PATH)fractals/
-	@mkdir $(OBJ_PATH)color_schemes/
+	@mkdir $(OBJ_PATH)fractal_sets/
+	@mkdir $(OBJ_PATH)color_sets/
 
 $(MLX):
 	@make -sC $(MLX_PATH)

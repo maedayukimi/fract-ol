@@ -6,13 +6,13 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 19:50:08 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 20:20:27 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	set_pixel_color(t_fractol *f, int x, int y, int color)
+static void	draw(t_fractol *f, int x, int y, int color)
 {
 	int	position;
 
@@ -52,7 +52,7 @@ void	render(t_fractol *f)
 			pr = f->min_r + (double)x * (f->max_r - f->min_r) / WIDTH;
 			pi = f->max_i + (double)y * (f->min_i - f->max_i) / HEIGHT;
 			nb_iter = calculate_fractal(f, pr, pi);
-			set_pixel_color(f, x, y, f->palette[nb_iter]);
+			draw(f, x, y, f->palette[nb_iter]);
 			x++;
 		}
 		y++;

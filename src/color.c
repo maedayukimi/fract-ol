@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:48:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 20:06:08 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 20:09:54 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	color_shift_special(t_fractol *f)
 	else if (f->color_pattern == 7)
 		pattern_7(f, f->color);
 	else if (f->color_pattern == 8)
-		pattern_1(f, (int [8]){0xFF0000, 0xFF7F00, 0xFFFF00,
+		pattern_ex(f, (int [8]){0xFF0000, 0xFF7F00, 0xFFFF00,
 			0x00FF00, 0x0000FF, 0x4B0082, 0x9400D3, 0xFFFFFF}, 8);
 }
 
@@ -56,7 +56,7 @@ void	color_shift(t_fractol *f)
 	if (f->color_pattern == 0)
 		pattern_0(f, alt_color);
 	else if (f->color_pattern == 1)
-		pattern_1(f, (int [4]){0x000000, alt_color,
+		pattern_ex(f, (int [4]){0x000000, alt_color,
 			get_percent_color(f->color, 50), 0xFFFFFF}, 4);
 	else
 		color_shift_striped(f);

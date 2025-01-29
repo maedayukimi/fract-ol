@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 20:06:08 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/28 20:09:54 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		julia_shift(int x, int y, t_fractol *f);
 
 void	color_shift(t_fractol *f);
 void	pattern_0(t_fractol *f, int color);
-void	pattern_1(t_fractol *f, int colors[4], int n);
+void	pattern_ex(t_fractol *f, int colors[4], int n);
 void	pattern_2(t_fractol *f, int color);
 void	pattern_3(t_fractol *f, int color);
 void	pattern_4(t_fractol *f, int color);
