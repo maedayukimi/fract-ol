@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:31:34 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/29 18:32:50 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	get_complex_layout(t_fractol *f)
 	{
 		f->min_r = -2.0;
 		f->max_r = 2.0;
-		f->max_i = -1.5;
+		f->max_i = -2.1;
 		f->min_i = f->max_i + (f->max_r - f->min_r) * HEIGHT / WIDTH;
 	}
 }

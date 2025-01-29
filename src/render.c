@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 20:20:27 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/29 19:41:55 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static void	draw(t_fractol *f, int x, int y, int color)
 	int	position;
 
 	position = x * 4 + y * WIDTH * 4;
-	f->buf[position] = color;
-	f->buf[position + 1] = color >> 8;
-	f->buf[position + 2] = color >> 16;
-	f->buf[position + 3] = color >> 24;
+	f->buf[position] = (color >> 0) & 0xFF;
+	f->buf[position + 1] = (color >> 8) & 0xFF;
+	f->buf[position + 2] = (color >> 16) & 0xFF;
+	f->buf[position + 3] = (color >> 24) & 0xFF;
 }
 
 static int	calculate_fractal(t_fractol *f, double pr, double pi)
