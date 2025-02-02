@@ -6,15 +6,15 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:18 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 20:09:54 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 01:33:39 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "mlx.h"
 # include "libft.h"
+# include "mlx.h"
 # include "keys.h"
 # include <stdio.h>
 # include <math.h>
@@ -54,15 +54,8 @@ void	render(t_fractol *f);
 int		julia_shift(int x, int y, t_fractol *f);
 
 void	color_shift(t_fractol *f);
-void	pattern_0(t_fractol *f, int color);
-void	pattern_ex(t_fractol *f, int colors[4], int n);
-void	pattern_2(t_fractol *f, int color);
-void	pattern_3(t_fractol *f, int color);
-void	pattern_4(t_fractol *f, int color);
-void	pattern_6(t_fractol *f, int color);
-void	pattern_5(t_fractol *f, int color);
-void	pattern_7(t_fractol *f, int color);
-int		get_percent_color(int color, double percent);
+void	draw_color(t_fractol *f, int color);
+int	base_colors(int color_pattern);
 
 int		key_event(int keycode, t_fractol *mlx);
 int		mouse_event(int keycode, int x, int y, t_fractol *mlx);

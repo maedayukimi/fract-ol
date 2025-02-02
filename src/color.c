@@ -6,58 +6,52 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:48:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 20:09:54 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/01 16:05:53 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	color_shift_special(t_fractol *f)
-{
-	int	alt_color;
-
-	if (f->color == 0xFFFFFF)
-		alt_color = 0xCCCCCC;
-	else
-		alt_color = f->color;
-	if (f->color_pattern == 5)
-		pattern_5(f, alt_color);
-	else if (f->color_pattern == 6)
-		pattern_6(f, f->color);
-	else if (f->color_pattern == 7)
-		pattern_7(f, f->color);
-	else if (f->color_pattern == 8)
-		pattern_ex(f, (int [8]){0xFF0000, 0xFF7F00, 0xFFFF00,
-			0x00FF00, 0x0000FF, 0x4B0082, 0x9400D3, 0xFFFFFF}, 8);
-}
-
-static void	color_shift_striped(t_fractol *f)
-{
-	if (f->color_pattern == 2)
-		pattern_2(f, f->color);
-	else if (f->color_pattern == 3)
-		pattern_3(f, f->color);
-	else if (f->color_pattern == 4)
-		pattern_4(f, f->color);
-	else
-		color_shift_special(f);
-}
-
 void	color_shift(t_fractol *f)
 {
-	int	alt_color;
+	static int	origin_color = -1;
 
+	if (origin_color == -1)
+		origin_color = f->color;
 	f->color_pattern = (f->color_pattern + 1) % 9;
 	reinit_img(f);
-	if (f->color == 0x000000)
-		alt_color = 0x333333;
-	else
-		alt_color = f->color;
 	if (f->color_pattern == 0)
-		pattern_0(f, alt_color);
-	else if (f->color_pattern == 1)
-		pattern_ex(f, (int [4]){0x000000, alt_color,
-			get_percent_color(f->color, 50), 0xFFFFFF}, 4);
+	{
+		f->color = origin_color;
+		if (f->color == 0x000000)
+			f->color = 0x333333;
+	}
 	else
-		color_shift_striped(f);
+		f->color = base_colors(f->color_pattern);
+	draw_color(f, f->color);
+	render(f);
+}
+
+int	base_colors(int color_pattern)
+{
+	int	new_color;
+
+	new_color = 0x4b0082;
+	if (color_pattern == 1)
+		new_color = 0xFF4500;
+	else if (color_pattern == 2)
+		new_color = 0xB22222;
+	else if (color_pattern == 3)
+		new_color = 0xDAA520;
+	else if (color_pattern == 4)
+		new_color = 0xFFBF00;
+	else if (color_pattern == 5)
+		new_color = 0x50C878;
+	else if (color_pattern == 6)
+		new_color = 0x228B22;
+	else if (color_pattern == 7)
+		new_color = 0x87CEEB;
+	else if (color_pattern == 8)
+		new_color = 0x1E3A8A;
+	return (new_color);
 }

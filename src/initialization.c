@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:31:34 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/29 18:32:50 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 01:27:24 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	init(t_fractol *f)
 	f->color = 0;
 }
 
-void	get_complex_layout(t_fractol *f)
+void	set_window(t_fractol *f)
 {
 	if (f->set == MANDELBROT)
 	{
@@ -90,6 +90,6 @@ void	mlx_initialize(t_fractol *f)
 	f->sx = 2.0;
 	f->rx = 0.5;
 	f->fx = 1.0;
-	get_complex_layout(f);
+	set_window(f);
 	color_shift(f);
 }

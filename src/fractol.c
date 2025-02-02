@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:10:03 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:53:03 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 01:31:37 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,17 @@ static void	get_set(t_fractol *f, char **av)
 		f->set = JULIA;
 	else
 		help_msg(f);
-	printf("f->set: %d\n", f->set);
 }
 
-static void	set_fractal_size(t_fractol *f, int ac, char **av)
+static void	set_complex_number(t_fractol *f, int ac, char **av)
 {
-	if (f->set == MANDELBROT || ac == 2)
+	if ((f->set == MANDELBROT || ac == 2) || (f->set == JULIA && ac == 3))
 	{
 		f->kr = -0.766667;
 		f->ki = -0.090000;
 		return ;
 	}
-	if (ac == 3)
+	else if (ac == 3)
 		help_msg(f);
 	if (!ft_strchr(av[2], '.'))
 		help_msg(f);
@@ -55,7 +54,7 @@ static void	handle_args(t_fractol *f, int ac, char **av)
 		help_msg(f);
 	else if (f->set == JULIA && ac > 5)
 		help_msg(f);
-	set_fractal_size(f, ac, av);
+	set_complex_number(f, ac, av);
 	get_color(f, ac, av);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:45:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/29 19:34:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/01 16:06:31 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	interpolated(int startcolor, int endcolor, double fraction)
 	return (0xFF << 24 | start_rgb[0] << 16 | start_rgb[1] << 8 | start_rgb[2]);
 }
 
-void	pattern_0(t_fractol *f, int color)
+void	draw_color(t_fractol *f, int color)
 {
 	int		i;
 	int		j;
@@ -46,36 +46,10 @@ void	pattern_0(t_fractol *f, int color)
 		while (j < MAX_ITER / 2)
 		{
 			fraction = (double)j / (MAX_ITER / 2);
-			f->palette[i + j] = interpolated(color1, color2, fraction);
-			j++;
+			f->palette[i + j++] = interpolated(color1, color2, fraction);
 		}
 		color1 = color2;
 		color2 = 0xFFFFFF;
-		i += j;
-	}
-	f->palette[MAX_ITER - 1] = 0;
-}
-
-void	pattern_ex(t_fractol *f, int colors[4], int n)
-{
-	int		i;
-	int		j;
-	int		x;
-	double	fraction;
-
-	i = 0;
-	x = 0;
-	while (i < MAX_ITER)
-	{
-		j = 0;
-		while ((i + j) < MAX_ITER && j < (MAX_ITER / (n - 1)))
-		{
-			fraction = (double)j / (MAX_ITER / (n - 1));
-			f->palette[i + j] = interpolated
-				(colors[x], colors[x + 1], fraction);
-			j++;
-		}
-		x++;
 		i += j;
 	}
 	f->palette[MAX_ITER - 1] = 0;

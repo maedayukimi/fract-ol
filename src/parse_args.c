@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:01:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/29 19:50:18 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 01:14:18 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,13 @@ static int	ft_atox_color(t_fractol *f, char *color)
 
 void	get_color(t_fractol *f, int ac, char **av)
 {
-	if (f->set == JULIA && ac == 5)
-		f->color = ft_atox_color(f, av[4]);
+	if (f->set == JULIA)
+	{
+		if (ac == 5)
+			f->color = ft_atox_color(f, av[4]);
+		else if (ac == 3)
+			f->color = ft_atox_color(f, av[2]);
+	}
 	else if (f->set != JULIA && ac == 3)
 		f->color = ft_atox_color(f, av[2]);
 	if (ac == 2 || (f->set == JULIA && ac == 4))

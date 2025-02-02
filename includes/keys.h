@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:22:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/25 15:17:25 by mawako           ###   ########.fr       */
+/*   Updated: 2025/01/29 20:15:16 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+# define KEY_K 107
 # define KEY_UP 65362
 # define KEY_DOWN 65364
 # define KEY_LEFT 65361
@@ -36,6 +37,5 @@
 # define MOUSE_WHEEL_BTN 3
 # define MOUSE_BTN 1
 # define MOUSE_BTN_2 2
-# define KEY_K 107
 
 #endif
