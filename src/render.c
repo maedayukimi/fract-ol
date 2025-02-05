@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/29 19:41:55 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 16:39:02 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	calculate_fractal(t_fractol *f, double pr, double pi)
 {
 	int	nb_iter;
 
+	nb_iter = 0;
 	if (f->set == MANDELBROT)
 		nb_iter = mandelbrot(pr, pi);
 	else if (f->set == JULIA)

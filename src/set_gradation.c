@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_interpolated.c                               :+:      :+:    :+:   */
+/*   set_gradation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:45:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/02/01 16:06:31 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 17:52:38 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	interpolated(int startcolor, int endcolor, double fraction)
+static int	set_gradation(int startcolor, int endcolor, double fraction)
 {
 	int	start_rgb[3];
 	int	end_rgb[3];
@@ -46,7 +46,7 @@ void	draw_color(t_fractol *f, int color)
 		while (j < MAX_ITER / 2)
 		{
 			fraction = (double)j / (MAX_ITER / 2);
-			f->palette[i + j++] = interpolated(color1, color2, fraction);
+			f->palette[i + j++] = set_gradation(color1, color2, fraction);
 		}
 		color1 = color2;
 		color2 = 0xFFFFFF;

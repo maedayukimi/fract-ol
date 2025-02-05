@@ -6,19 +6,11 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:10:57 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/27 19:10:02 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/05 15:36:57 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int	julia_shift(int x, int y, t_fractol *f)
-{
-	f->kr = f->min_r + (double)x * (f->max_r - f->min_r) / WIDTH;
-	f->ki = f->max_i + (double)y * (f->min_i - f->max_i) / HEIGHT;
-	render(f);
-	return (0);
-}
 
 int	julia(t_fractol *f, double zr, double zi)
 {
