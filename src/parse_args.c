@@ -6,21 +6,17 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:01:09 by mawako            #+#    #+#             */
-/*   Updated: 2025/02/03 01:14:18 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/03 18:51:32 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	skip_space_sign_0x(char *color)
+static int	skip_hexsign(char *color)
 {
 	int	i;
 
 	i = 0;
-	while (ft_isspace(color[i]))
-		i++;
-	if (color[i] == '+')
-		i++;
 	if (color[i] == '0' && (color[i + 1]
 			&& (color[i + 1] == 'x' || color[i] == 'X')))
 		i = i + 2;
@@ -35,7 +31,7 @@ static int	ft_atox_color(t_fractol *f, char *color)
 
 	n = 0;
 	i = 0;
-	i = skip_space_sign_0x(color);
+	i = skip_hexsign(color);
 	x = 0;
 	while (color[i] && ft_ishexdigit(color[i]))
 	{

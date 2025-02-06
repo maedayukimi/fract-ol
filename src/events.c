@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:21:37 by mawako            #+#    #+#             */
-/*   Updated: 2025/01/28 17:44:04 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/05 15:38:21 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 static void	zoom(t_fractol *f, double zoom)
 {
-	double	center_r;
-	double	center_i;
+	double	width_r;
+	double	height_i;
 	double	new_width;
 	double	new_height;
 
-	center_r = (f->min_r + f->max_r) / 2;
-	center_i = (f->min_i + f->max_i) / 2;
+	width_r = (f->min_r + f->max_r) / 2;
+	height_i = (f->min_i + f->max_i) / 2;
 	new_width = (f->max_r - f->min_r) * zoom / 2;
 	new_height = (f->max_i - f->min_i) * zoom / 2;
-	f->min_r = center_r - new_width;
-	f->max_r = center_r + new_width;
-	f->min_i = center_i - new_height;
-	f->max_i = center_i + new_height;
+	f->min_r = width_r - new_width;
+	f->max_r = width_r + new_width;
+	f->min_i = height_i - new_height;
+	f->max_i = height_i + new_height;
 }
 
 static void	move(t_fractol *f, double distance, char direction)
@@ -77,10 +77,6 @@ int	key_event(int keycode, t_fractol *mlx)
 		end_fractol(mlx);
 		return (0);
 	}
-	else if (keycode == KEY_PLUS)
-		zoom(mlx, 0.5);
-	else if (keycode == KEY_MINUS)
-		zoom(mlx, 0.2);
 	else if (keycode == KEY_UP || keycode == KEY_W)
 		move(mlx, 0.2, 'U');
 	else if (keycode == KEY_DOWN || keycode == KEY_S)
@@ -115,11 +111,6 @@ int	mouse_event(int keycode, int x, int y, t_fractol *mlx)
 	}
 	else if (keycode == MOUSE_WHEEL_DOWN)
 		zoom(mlx, 2);
-	else if (keycode == MOUSE_BTN)
-	{
-		if (mlx->set == JULIA)
-			julia_shift(x, y, mlx);
-	}
 	else
 		return (0);
 	render(mlx);
