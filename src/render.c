@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:40:12 by mawako            #+#    #+#             */
-/*   Updated: 2025/02/06 13:11:50 by mawako           ###   ########.fr       */
+/*   Updated: 2025/02/09 15:36:08 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	render(t_fractol *f)
 			pr = f->min_r + (double)x * (f->max_r - f->min_r) / WIDTH;
 			pi = f->max_i + (double)y * (f->min_i - f->max_i) / HEIGHT;
 			nb_iter = calculate_fractal(f, pr, pi);
-			draw(f, x, y, f->palette[nb_iter]);
+			draw(f, x, HEIGHT - y, f->palette[nb_iter]);
 			x++;
 		}
 		y++;
